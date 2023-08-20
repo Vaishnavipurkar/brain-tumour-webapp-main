@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron text-center bg-primary text-white">
+        <h1 class="display-4">Discover Brain Tumor Detection</h1>
+        <p class="lead">
+            Harnessing the Power of AI for Brain MRI Analysis
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Upload an MRI Image</h2>
+            <form id="upload-file" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="imageUpload" class="btn btn-secondary btn-block">
+                        Choose Image
+                    </label>
+                    <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg" class="form-control-file" style="display:none;">
+                </div>
+            </form>
+            <div class="image-section" style="display:none;">
+                <div class="img-preview">
+                    <div id="imagePreview"></div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-predict">Predict Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2>Prediction Result</h2>
+            <div class="loader" style="display:none;"></div>
+            <h3 id="result">
+                <span> </span>
+            </h3>
+        </div>
+    </div>
+
+    <div class="notes-section mt-5">
+        <h2 class="text-center">Important Notes</h2>
+        <ul>
+            <li>This AI model is trained on the <a href="https://drive.google.com/drive/folders/1EVvsAskbgxTbuHLxjJJ4gAjm4t9HYBeS?usp=sharing" target="_blank" rel="noopener noreferrer">Brain MRI Images Dataset</a>.</li>
+            <li><b class="text-danger">Caution:</b> This AI model is for research and comparison purposes only. It's not validated for clinical use.</li>
+            <li>This web app is built using code from <a href="https://github.com/Vaishnavipurkar/Brain-tumor-detection-web-app.git" target="_blank" rel="noopener noreferrer">Vodafone Team 164</a>.</li>
+            <li>We value your feedback! Reach us at <a href="mailto:Vaishnavipurkar7@gmail.com">Vaishnavipurkar7@gmail.com</a>.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
