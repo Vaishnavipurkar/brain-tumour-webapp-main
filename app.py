@@ -95,7 +95,8 @@ def upload():
 
     #this section is used by gunicorn to serve the app on Heroku
 if __name__ == '__main__':
-        app.run(debug=False, host='0.0.0.0')
+         app.run(debug=True, host="localhost", port=8080)
+
     #uncomment this section to serve the app locally with gevent at:  http://localhost:5000
     # Serve the app with gevent 
     #http_server = WSGIServer(('', 5000), app)
